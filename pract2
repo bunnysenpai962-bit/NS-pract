@@ -1,0 +1,93 @@
+Pract no.2
+
+1. # Caesar Cipher Program
+
+def encrypt(text, shift):
+    result = ""
+
+    for char in text:
+        if char.isalpha():
+            start = ord('A') if char.isupper() else ord('a')
+            result += chr((ord(char) - start + shift) % 26 + start)
+        else:
+            result += char
+
+    return result
+
+
+def decrypt(text, shift):
+    result = ""
+
+    for char in text:
+        if char.isalpha():
+            start = ord('A') if char.isupper() else ord('a')
+            result += chr((ord(char) - start - shift) % 26 + start)
+        else:
+            result += char
+
+    return result
+
+
+message = input("Enter Message: ")
+shift = int(input("Enter Shift Value: "))
+
+encrypted = encrypt(message, shift)
+print("Encrypted Message:", encrypted)
+
+decrypted = decrypt(encrypted, shift)
+print("Decrypted Message:", decrypted)
+
+
+2. # Substitution Cipher Program
+
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+substitution = "QWERTYUIOPASDFGHJKLZXCVBNM"
+
+# Encryption Function
+def encrypt(message):
+    encrypted = ""
+
+    for char in message.upper():
+        if char in alphabet:
+            index = alphabet.index(char)
+            encrypted += substitution[index]
+        else:
+            encrypted += char
+
+    return encrypted
+
+
+# Decryption Function
+def decrypt(message):
+    decrypted = ""
+
+    for char in message.upper():
+        if char in substitution:
+            index = substitution.index(char)
+            decrypted += alphabet[index]
+        else:
+            decrypted += char
+
+    return decrypted
+
+
+message = input("Enter Message: ")
+
+encrypted = encrypt(message)
+print("Encrypted Message:", encrypted)
+
+decrypted = decrypt(encrypted)
+print("Decrypted Message:", decrypted)
+
+
+message = input("Enter Message: ")
+shift = int(input("Enter Shift Value: "))
+
+encrypted = encrypt(message, shift)
+print("Encrypted Message:", encrypted)
+
+decrypted = decrypt(encrypted, shift)
+print("Decrypted Message:", decrypted)
+
+
+
