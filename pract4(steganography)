@@ -1,0 +1,23 @@
+from PIL import Image
+import stepic
+
+# Open original image
+original_img = Image.open("img.jpg")
+
+# Encode message into image
+encoded_img = stepic.encode(original_img, b"Network Security")
+
+# Save encoded image
+encoded_img.save("img2.png")
+
+# Open encoded image
+encoded_img = Image.open("img2.png")
+
+# Show image
+encoded_img.show()
+
+# Decode hidden message
+decoded_msg = stepic.decode(encoded_img)
+
+# Print decoded message
+print("Decoded Message:", decoded_msg)
