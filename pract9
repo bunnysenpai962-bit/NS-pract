@@ -1,0 +1,44 @@
+import hashlib
+
+# SHA256
+text = "Network Security"
+
+result = hashlib.sha256(text.encode())
+
+print("The hexadecimal equivalent of SHA256 is:")
+print(result.hexdigest())
+
+print("\r")
+
+
+# SHA384
+text = "Cryptography"
+
+result = hashlib.sha384(text.encode())
+
+print("The hexadecimal equivalent of SHA384 is:")
+print(result.hexdigest())
+
+print("\r")
+
+
+# SHA224
+text = "Cybersecurity"
+
+result = hashlib.sha224(text.encode())
+
+print("The hexadecimal equivalent of SHA224 is:")
+print(result.hexdigest())
+
+print("\r")
+
+
+# SHA512
+text = "Hello World"
+
+result = hashlib.sha512(text.encode())
+
+print("The hexadecimal equivalent of SHA512 is:")
+print(result.hexdigest())
+
+print("\r")
